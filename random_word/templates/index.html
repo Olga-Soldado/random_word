@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Generador random_word.</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    {%load static%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">    
+</head>
+<body>
+    <div class="container-sm">
+        <div class="col-8" >
+        <h2>Palabra random:<span> {{ generador }}</span></h2>
+        <h2>Contador ramdom :<span>{{num_random}}</span></h2>
+        <div class="col-4">
+            <form action="/random_word" method="get">
+                <button type="submit">Generador_Random</button>
+            </form>
+        </div>
+       
+        <h3>Numero de intentos:{{ request.session.contador }}</h3>
+        <form action="/" method="get">
+            <button type="submit">Reiniciar contador</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
